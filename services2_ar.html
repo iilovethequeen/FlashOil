@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فلاش أويل - الخدمات</title>
+
+    <link rel="stylesheet" href="services2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+<!-- Language Switch Button -->
+<div id="lang-btn-box" style="position: fixed; top: 10px; left: 10px; z-index: 9999;">
+    <button onclick="switchLang()" style="padding:6px 12px; font-size:14px; border:none; background:#fff; cursor:pointer; border-radius:5px;">EN</button>
+</div>
+
+<script>
+    function switchLang() {
+        window.location.href = "services2.html";
+    }
+</script>
+
+<nav>
+    <a href="index_ar.html" style="color:#fff; font-size:24px; font-weight:600; text-decoration:none;">
+        <img id="logo" src="WhatsApp_Image_2025-11-11_at_17.01.16-removebg-preview.png" alt="شعار فلاش أويل">
+    </a>
+
+    <div class="nav-links" id="navlinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+            <li><a href="index_ar.html">الرئيسية</a></li>
+            <li><a href="services2_ar.html">الخدمات</a></li>
+            <li><a href="contact_page_html_css_js_ar.html">اتصل بنا</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>
+
+<div class="services">
+    <div class="content">
+        <h1>أهداف خدمات حقول النفط</h1>
+        <p>
+            نحن ملتزمون بتقديم مجموعة كاملة من الخدمات الفنية والحلول لجميع عمليات حقول النفط.
+        </p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>الخدمات الفنية الأساسية والبنية التحتية</h3>
+            <ul>
+                <li><i class="fa-solid fa-plus"></i>تقديم **الخدمات الفنية** لجميع حقول النفط.</li>
+                <li><i class="fa-solid fa-plus"></i>تنفيذ جميع الأعمال المتعلقة، بما في ذلك **الاستشارات الفنية** للمرافق والمشاريع النفطية.</li>
+                <li><i class="fa-solid fa-plus"></i>تطبيق أنظمة الغاز، **الأنابيب وصيانتها**.</li>
+                <li><i class="fa-solid fa-plus"></i>إنشاء خزانات ومحطات لنقل **النفط والغاز وأنابيبها**، والربط والأعمال الوقائية اللازمة.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>دعم العمليات وتطوير الحقول</h3>
+            <ul>
+                <li><i class="fa-solid fa-plus"></i>**تركيب أنابيب النفط والغاز** والأسلاك الكهربائية.</li>
+                <li><i class="fa-solid fa-plus"></i>تجهيز المواقع بخدمات **الأسمنت، الطين، وسوائل الحفر**.</li>
+                <li><i class="fa-solid fa-plus"></i>تزويد مراكز حقول النفط بـ **الطرق العلمية والتقنيات الحديثة**.</li>
+                <li><i class="fa-solid fa-plus"></i>تنفيذ **أعمال الدهان والعزل** للمرافق النفطية.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>اللوجستيات والسلامة والتعاون</h3>
+            <ul>
+                <li><i class="fa-solid fa-plus"></i>تنفيذ عمليات **تنظيف وغسيل متخصصة** للخزانات والمعدات داخل حقول النفط.</li>
+                <li><i class="fa-solid fa-plus"></i>توفير **أنظمة الاتصال والمراقبة لحقول النفط**.</li>
+                <li><i class="fa-solid fa-plus"></i>نقل النفط والغاز باستخدام **وسائل ومعدات متخصصة**.</li>
+                <li><i class="fa-solid fa-plus"></i>**التعاون مع الشركات المحلية والأجنبية** المتخصصة في خدمات حقول النفط.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align:center; color:var(--muted); margin-top:18px; font-size:13px">
+        © <span id="year"></span> 2025 فلاش أويل  
+        استكشاف النفط والغاز • خدمات الطاقة • حلول هندسية
+    </div>
+</div>
+
+<script>
+    var navLinks = document.getElementById("navlinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-250px";
+    }
+
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

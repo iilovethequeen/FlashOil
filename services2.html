@@ -2,15 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Oil</title>
+    <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flash Oil</title>
 
-    <link rel="stylesheet" href="services2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- Language Switch Button (TOP) -->
+  <div id="lang-btn-box" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+  ">
+    <button onclick="switchLang()" style="
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      background: #e0891771;
+      cursor: pointer;
+      border-radius: 5px;
+    ">AR</button>
+  </div>
+  <!-- END Language Button -->
+
+  <link rel="stylesheet" href="stayle.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+<script>
+  function switchLang() {
+    // Change "index_ar.html" to your actual Arabic version file
+    window.location.href = "services2_ar.html";
+  }
+</script>
 </head>
 
 <body>

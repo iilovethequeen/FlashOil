@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "DM sans ";
+}
+
+body {
+    background-color: #173058;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+p {
+    color: rgba(131, 131, 131, 1)
+}
+
+/* Navigation Styles (Desktop) */
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+nav .fa {
+    display: none; /* Hide mobile menu icon by default */
+}
+
+/* Hero and Text Box (if used elsewhere) */
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 90px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* Services Section */
+.services {
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 8%;
+    color: #fdfdfd;
+    background-color: #192e4b;
+}
+
+.services .content {
+    display: flex;
+    justify-content: space-between;
+    margin: 4.8rem 0;
+}
+
+.services .content h1 {
+    font-size: 3.7rem;
+    line-height: 3.7rem;
+    letter-spacing: 1px;
+    width: 50%;
+}
+
+.services .content p {
+    width: 50%;
+}
+
+/* Card Container */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Individual Card Styles */
+.cards .card {
+    /* Fixed for better text fit on desktop */
+    height: auto;
+    min-height: 250px;
+    width: 100%; 
+
+    border: 0.5px solid rgba(225, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* Card Hover Effect (Yellow background expansion) */
+.cards .card:after {
+    position: absolute;
+    content: "";
+    height: 40%;
+    width: 8%;
+    top: 30%;
+    right: -4%;
+    background-color: #f8c845;
+    z-index: -1;
+    border-radius: 20px;
+    transition: .6s;
+}
+
+.cards .card:hover:after {
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+}
+
+/* FIX: Text Color on Hover (ensures visibility against yellow background) */
+.cards .card:hover {
+    color: #000;
+}
+.cards .card:hover h3,
+.cards .card:hover ul li,
+.cards .card:hover ul li i {
+    color: #000;
+}
+
+.cards .card h3 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.cards .card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cards .card ul li {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.cards .card ul li i {
+    margin-right: 8px;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+/* --- Service Text Animation Setup --- */
+/* Initial state: Hidden and slightly moved down */
+.animate-service-item {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Final state: Visible and in place (class added by JavaScript) */
+.animate-service-item.service-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ======================================================= */
+/* --- RESPONSIVE DESIGN MEDIA QUERIES --- */
+/* ======================================================= */
+
+/* --- Tablet/Desktop Transition (3-column to 2-column) --- */
+@media (max-width: 1100px) {
+    /* Cards: 2 Columns */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Content: Stack Header/Paragraph and Center */
+    .services .content {
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0;
+    }
+
+    .services .content h1, 
+    .services .content p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services .content h1 {
+        font-size: 2.8rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Mobile Fixes (Phone Screens up to 768px) --- */
+@media (max-width: 768px) {
+    
+    /* FIX: Service Section Padding */
+    .services {
+        padding: 2rem 4%; /* Reduce overall padding for small screens */
+    }
+    
+    /* CRITICAL FIX: Card Stacking and Sizing for Phones */
+    .cards {
+        grid-template-columns: 1fr; /* Forces all cards into a single vertical column */
+        gap: 20px;
+    }
+    
+    .cards .card {
+        width: 100%; /* Card fills the container */
+        min-height: auto; 
+        padding: 1rem; /* Reduced padding */
+    }
+    
+    /* Content Header Sizing for Phones */
+    .services .content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .services .content p {
+        font-size: 1rem;
+    }
+
+    /* Mobile Navigation Display Logic */
+    nav {
+        padding: 2% 4%;
+    }
+    
+    /* Show mobile menu icon */
+    nav .fa-bars {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    /* Hide the mobile menu panel off-screen by default */
+    .nav-links {
+        position: fixed;
+        background: #173058;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: -250px; /* Hidden off-screen by default */
+        z-index: 99;
+        transition: 0.5s;
+    }
+
+    /* Show close icon and stack links */
+    .nav-links .fa-times {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        padding: 30px;
+    }
+
+    .nav-links ul li {
+        display: block; /* Stack navigation links vertically */
+    }
+}

@@ -39,7 +39,7 @@
 
 <script>
   function switchLang() {
-    // Change "index_ar.html" to your actual Arabic version file
+    // Change from the ari
     window.location.href = "index_ar.html";
   }
 </script>
@@ -190,9 +190,12 @@
     var navlinks = document.getElementById("navlinks");
     function showMenu() {
       navlinks.style.right = "0";
+      navlinks.style.display = "inline-block"
     }
     function hideMenu() {
       navlinks.style.right = "-200px";
+      navlinks.style.display = "none"
+
     }
   </script>
 </body>
